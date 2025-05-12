@@ -8,7 +8,7 @@
     --accent-hover-color: #29b6f6;
     --border-color: #333333;
 
-    --font-family: 'Inter', sans-serif;
+    --font-family: "Inter", sans-serif;
 }
 
 /* Basic Reset */
@@ -36,15 +36,25 @@ body {
     padding: 0 20px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: var(--primary-text-color);
     margin-bottom: 0.8em;
     line-height: 1.2;
 }
 
-h1 { font-size: 3rem; }
-h2 { font-size: 2.2rem; margin-bottom: 1.5em; text-align: center;}
-h3 { font-size: 1.5rem; }
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+h3 {
+    font-size: 1.5rem;
+}
 
 p {
     margin-bottom: 1em;
@@ -100,7 +110,6 @@ ul {
     color: var(--primary-text-color); /* Keep logo color consistent */
 }
 
-
 .navbar nav ul {
     display: flex;
     gap: 20px; /* Space between nav items */
@@ -127,7 +136,9 @@ ul {
     align-items: center;
     text-align: center;
     padding-top: 80px; /* Account for fixed navbar */
-    background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)), url('https://via.placeholder.com/1920x1080/111/333?text=Background+Image+Optional') no-repeat center center/cover; /* Optional subtle background */
+    background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)),
+        url("https://via.placeholder.com/1920x1080/111/333?text=Background+Image+Optional")
+            no-repeat center center/cover; /* Optional subtle background */
 }
 
 .hero h1 {
@@ -166,13 +177,18 @@ ul {
 }
 
 .content-section.alt-bg {
-    background-color: var(--surface-color); /* Alternate background for contrast */
+    background-color: var(
+        --surface-color
+    ); /* Alternate background for contrast */
 }
 
 /* --- Projects Section --- */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(300px, 1fr)
+    ); /* Responsive grid */
     gap: 30px;
 }
 
@@ -259,7 +275,6 @@ ul {
     font-size: 0.9rem;
 }
 
-
 /* --- Contact Section --- */
 #contact .container {
     max-width: 700px;
@@ -315,14 +330,6 @@ ul {
     font-size: 1rem;
 }
 
-contact textarea {
-    resize: vertical; /* Allow vertical resize */
-}
-
-#contact button[type="submit"] {
-    align-self: flex-start; /* Align button to the left */
-}
-*/
 
 /* --- Footer --- */
 footer {
@@ -337,8 +344,12 @@ footer {
 
 /* --- Responsiveness --- */
 @media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 1.8rem; }
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
 
     .navbar .container {
         flex-direction: column; /* Stack logo and nav on small screens */
@@ -351,7 +362,7 @@ footer {
         gap: 10px;
     }
 
-     .project-grid {
+    .project-grid {
         grid-template-columns: 1fr; /* Stack projects */
     }
 
@@ -364,8 +375,8 @@ footer {
     }
 
     .profile-picture {
-        width: 150px;
-        height: 150px;
+        width: 250px;
+        height: 250px;
     }
 
     .hero h1 {
@@ -375,13 +386,13 @@ footer {
 
 /* Profile Picture Styles */
 .profile-picture {
-    width: 200px;
-    height: 200px;
+    width: 450px;
+    height: 300px;
     margin: 0 auto 2rem;
     border-radius: 10px;
     overflow: hidden;
-    border: 3px solid var(--accent-color);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid white;
+    box-shadow: 0 4px 20px rgba(250, 250, 250, 0.3);
     transition: transform 0.3s ease;
 }
 
