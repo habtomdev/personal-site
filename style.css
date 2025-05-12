@@ -268,17 +268,31 @@ ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    max-width: 600px;
+    gap: 15px;
+    max-width: 700px;
 }
 
 .skills-list li {
     background-color: var(--bg-color);
     color: var(--secondary-text-color);
-    padding: 8px 15px;
+    padding: 10px 20px;
     border-radius: 20px; /* Pill shape */
     border: 1px solid var(--border-color);
     font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skills-list li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.skills-list li i {
+    font-size: 1.1rem;
+    color: var(--accent-color);
 }
 
 /* --- Contact Section --- */
