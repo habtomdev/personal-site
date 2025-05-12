@@ -36,8 +36,9 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
-    font-size: 16px; /* Base font size */
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 body {
@@ -45,12 +46,16 @@ body {
     background-color: var(--bg-color);
     color: var(--primary-text-color);
     line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    width: 100%;
+    position: relative;
 }
 
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 .logo {
@@ -152,19 +157,20 @@ ul {
 
 /* --- Hero Section (Home) --- */
 .hero {
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 80px; /* Account for fixed navbar */
-    background: linear-gradient(
-            rgba(var(--bg-color-rgb), 0.8),
-            rgba(var(--bg-color-rgb), 0.9)
-        ),
-        url("https://via.placeholder.com/1920x1080/111/333?text=Background+Image+Optional")
-            no-repeat center center/cover; /* Optional subtle background */
+    padding: 80px 20px 40px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero .container {
+    width: 100%;
+    max-width: 800px;
 }
 
 .hero h1 {
@@ -392,45 +398,175 @@ footer {
 
 /* --- Responsiveness --- */
 @media (max-width: 768px) {
+    /* General Typography */
     h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
     h2 {
         font-size: 1.8rem;
+        margin-bottom: 1.2em;
+    }
+    h3 {
+        font-size: 1.3rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 0.8rem 0;
     }
 
     .navbar .container {
-        flex-direction: column; /* Stack logo and nav on small screens */
-        gap: 10px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 15px;
     }
 
-    .navbar nav ul {
-        justify-content: center; /* Center nav items */
-        flex-wrap: wrap; /* Allow items to wrap */
-        gap: 10px;
+    .navbar .logo {
+        font-size: 1.3rem;
     }
 
+    .navbar nav {
+        display: none; /* Hide nav on mobile - you might want to add a mobile menu button */
+    }
+
+    .theme-toggle {
+        font-size: 1.1rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 60px 15px 30px;
+    }
+
+    .profile-picture {
+        width: min(300px, 90%);
+    }
+
+    .hero .subtitle {
+        font-size: 1.1rem;
+        padding: 0 20px;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+
+    /* Content Sections */
+    .content-section {
+        padding: 40px 0;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Projects Section */
     .project-grid {
-        grid-template-columns: 1fr; /* Stack projects */
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-card {
+        max-width: 100%;
+    }
+
+    .project-card h3 {
+        font-size: 1.2rem;
+        padding: 15px 15px 10px 15px;
+    }
+
+    .project-card p {
+        padding: 0 15px 15px 15px;
+        font-size: 0.9rem;
+    }
+
+    .project-links {
+        padding: 0 15px 15px 15px;
+        gap: 10px;
+    }
+
+    /* About Section */
+    #about .container {
+        padding: 0 20px;
+    }
+
+    .skills-list {
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .skills-list li {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+
+    /* Contact Section */
+    .contact-options {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contact-link {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .profile-picture {
+        width: min(250px, 90%);
     }
 
     .hero {
-        min-height: 80vh; /* Reduce height slightly */
+        padding: 50px 10px 20px;
     }
 
-    .content-section {
-        padding: 60px 0;
+    .hero .subtitle {
+        font-size: 1rem;
     }
 
-    .hero h1 {
-        font-size: 2.5rem;
+    .skills-list {
+        grid-template-columns: repeat(2, 1fr);
     }
+
+    .contact-options {
+        gap: 12px;
+    }
+
+    .contact-link {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Add smooth transitions for theme switching */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease,
+        border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Profile Picture Styles */
 .profile-picture {
-    width: 450px;
-    height: 300px;
+    width: min(450px, 90%);
+    height: auto;
+    aspect-ratio: 3/2;
     margin: 0 auto 2rem;
     border-radius: 10px;
     overflow: hidden;
@@ -467,4 +603,75 @@ footer {
 
 .theme-toggle i {
     font-size: 1.2rem;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--primary-text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+    color: var(--accent-color);
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: var(--navbar-bg);
+    padding: 1rem 0;
+    z-index: 999;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.mobile-nav.active {
+    transform: translateY(0);
+}
+
+.mobile-nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mobile-nav a {
+    color: var(--primary-text-color);
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.mobile-nav a:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
 }
