@@ -304,21 +304,29 @@ ul {
 .contact-options {
     margin-top: 30px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     gap: 25px;
+    justify-content: center;
 }
 
-.social-links {
+.contact-link {
     display: flex;
-    gap: 20px;
-    justify-content: center; /* Center links */
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--surface-color);
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
-.social-links a {
-    font-size: 1.1rem;
-    /* Add icons here if using Font Awesome */
-    /* Example: <i class="fab fa-linkedin"></i> LinkedIn */
+.contact-link:hover {
+    transform: translateY(-5px);
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Optional: Basic Form Styling (if you uncomment the form) */
