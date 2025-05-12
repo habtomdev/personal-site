@@ -17,6 +17,10 @@ A modern, responsive personal portfolio website built with HTML, CSS, and JavaSc
 -   HTML5
 -   CSS3 (with CSS Variables)
 -   JavaScript
+-   React
+-   Node.js
+-   Docker
+-   Git
 -   Font Awesome Icons
 -   Google Fonts (Inter & Audiowide)
 
