@@ -36,6 +36,12 @@ body {
     padding: 0 20px;
 }
 
+.logo {
+    font-family: "Audiowide", cursive;
+    font-size: 2rem;
+    color: var(--primary-text-color);
+}
+
 h1,
 h2,
 h3 {
