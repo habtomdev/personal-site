@@ -4,11 +4,11 @@
     --surface-color: #1e1e1e; /* Slightly lighter grey for cards/sections */
     --primary-text-color: #e0e0e0; /* Light grey for text */
     --secondary-text-color: #a0a0a0; /* Dimmer grey */
-    --accent-color: #4fc3f7; /* A nice light blue accent */
-    --accent-hover-color: #29b6f6;
+    --accent-color: white; /* A nice light blue accent */
+    --accent-hover-color: #b4e4fa;
     --border-color: #333333;
 
-    --font-family: "Inter", sans-serif;
+    --font-family: "Roboto Mono", monospace;
 }
 
 /* Basic Reset */
@@ -37,7 +37,7 @@ body {
 }
 
 .logo {
-    font-family: "Audiowide", cursive;
+    font-family: "Roboto Mono", monospace;
     font-size: 2rem;
     color: var(--primary-text-color);
 }
