@@ -182,6 +182,9 @@ ul {
     color: var(--secondary-text-color);
     margin-bottom: 1.5em;
     max-width: 600px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* --- Call to Action Button --- */
@@ -539,6 +542,10 @@ footer {
 
     .hero .subtitle {
         font-size: 1rem;
+        padding: 0 10px;
+        max-width: 300px;
+        margin: 0 auto;
+        text-align: center;
     }
 
     .skills-list {
