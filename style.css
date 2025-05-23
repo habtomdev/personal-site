@@ -16,15 +16,15 @@
 }
 
 [data-theme="light"] {
-    --bg-color: #ffffff;
-    --bg-color-rgb: 255, 255, 255;
-    --surface-color: #f5f5f5;
-    --primary-text-color: #333333;
-    --secondary-text-color: #666666;
+    --bg-color: #dbe2ef;
+    --bg-color-rgb: 219, 226, 239;
+    --surface-color: #f9f7f7;
+    --primary-text-color: #22223b;
+    --secondary-text-color: #4a4e69;
     --accent-color: #007bff;
     --accent-hover-color: #0056b3;
     --border-color: #e0e0e0;
-    --navbar-bg: rgba(255, 255, 255, 0.9);
+    --navbar-bg: rgba(219, 226, 239, 0.9);
     --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -125,8 +125,26 @@ ul {
 
 .navbar .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.desktop-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.theme-toggle {
+    margin-left: auto;
+    z-index: 2;
+}
+
+.navbar-actions {
+    display: none;
 }
 
 .navbar .logo {
@@ -153,6 +171,11 @@ ul {
 .navbar nav a.active /* Add 'active' class with JS if needed */ {
     background-color: var(--accent-color);
     color: var(--bg-color);
+}
+
+/* --- Navbar Actions (Right Side) --- */
+.navbar-actions {
+    display: none;
 }
 
 /* --- Hero Section (Home) --- */
@@ -690,11 +713,17 @@ footer {
     .desktop-nav {
         display: none;
     }
-
+    .navbar-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .theme-toggle {
+        margin-left: 0;
+    }
     .mobile-menu-btn {
         display: block;
     }
-
     .mobile-nav {
         display: block;
     }
