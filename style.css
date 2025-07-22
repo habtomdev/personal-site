@@ -11,20 +11,19 @@
     --border-color: #333333;
     --navbar-bg: rgba(30, 30, 30, 0.9);
     --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-
     --font-family: "Roboto Mono", monospace;
 }
 
 [data-theme="light"] {
-    --bg-color: #dbe2ef;
+    --bg-color: #819A91;
     --bg-color-rgb: 219, 226, 239;
-    --surface-color: #f9f7f7;
+    --surface-color: #EEEFE0;
     --primary-text-color: #22223b;
-    --secondary-text-color: #4a4e69;
-    --accent-color: #007bff;
+    --secondary-text-color: #22223a;
+    --accent-color: #EEEFE0;
     --accent-hover-color: #0056b3;
     --border-color: #e0e0e0;
-    --navbar-bg: rgba(219, 226, 239, 0.9);
+    --navbar-bg: #D1D8BE;
     --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -178,7 +177,12 @@ ul {
     display: none;
 }
 
+
+
+
 /* --- Hero Section (Home) --- */
+
+
 .hero {
     min-height: 100vh;
     display: flex;
@@ -214,7 +218,7 @@ ul {
 .cta-button {
     display: inline-block;
     background-color: var(--accent-color);
-    color: var(--bg-color);
+    color: black;
     padding: 12px 25px;
     border-radius: 5px;
     font-weight: bold;
@@ -224,8 +228,8 @@ ul {
 }
 
 .cta-button:hover {
-    background-color: var(--accent-hover-color);
-    color: var(--bg-color); /* Ensure text color remains readable */
+    background-color: black;
+    color: white; /* Ensure text color remains readable */
     transform: translateY(-2px); /* Subtle lift effect */
 }
 
@@ -292,7 +296,7 @@ ul {
 
 .tech-stack i {
     font-size: 1.5rem;
-    color: var(--accent-color);
+    color: #948979;
     transition: transform 0.3s ease;
 }
 
@@ -313,6 +317,7 @@ ul {
 .project-links a {
     font-weight: bold;
     font-size: 0.9rem;
+    color: var(--primary-text-color);
 }
 
 /* --- About Section --- */
@@ -365,6 +370,8 @@ ul {
 }
 
 /* --- Contact Section --- */
+
+
 #contact .container {
     max-width: 700px;
     text-align: center;
@@ -385,7 +392,7 @@ ul {
     height: 50px;
     border-radius: 50%;
     background-color: var(--surface-color);
-    color: var(--accent-color);
+    color: var(--secondary-text-color);
     font-size: 1.5rem;
     transition: all 0.3s ease;
     border: 1px solid var(--border-color);
@@ -430,7 +437,7 @@ ul {
 
 /* --- Footer --- */
 footer {
-    background-color: var(--surface-color);
+    background-color: var(--navbar-bg);
     color: var(--secondary-text-color);
     text-align: center;
     padding: 20px 0;
