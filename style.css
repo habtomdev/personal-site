@@ -212,6 +212,20 @@ ul {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    /* Give it a minimum height to avoid layout shift during typing */
+    min-height: 1.6em; /* Roughly one line of text based on line-height */
+}
+
+/* Typewriter cursor effect */
+/* .typewriter-text::after {
+    content: "|";
+    margin-left: 4px;
+    animation: blink 0.7s step-end infinite;
+} */
+
+@keyframes blink {
+    from, to { color: transparent; }
+    50% { color: var(--primary-text-color); }
 }
 
 /* --- Call to Action Button --- */
@@ -405,7 +419,7 @@ ul {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Optional: Basic Form Styling (if you uncomment the form) */
+/* Optional: Basic Form Styling */
 /*
 #contact form {
     margin-top: 40px;
@@ -735,3 +749,6 @@ footer {
         display: block;
     }
 }
+
+
+

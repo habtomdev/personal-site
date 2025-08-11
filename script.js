@@ -1,8 +1,8 @@
-// Theme switching functionality
+// This toggles the themes
 const themeToggle = document.querySelector(".theme-toggle");
 const themeIcon = themeToggle.querySelector("i");
 
-// Check for saved theme preference or use dark theme as default
+// use dark theme as default
 const savedTheme = localStorage.getItem("theme") || "dark";
 document.documentElement.setAttribute("data-theme", savedTheme);
 updateThemeIcon(savedTheme);
@@ -44,7 +44,7 @@ mobileNavLinks.forEach((link) => {
     });
 });
 
-// Close mobile menu when clicking outside
+// Close mobile nav when clicking on the outside
 document.addEventListener("click", (e) => {
     if (!mobileNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
         mobileNav.classList.remove("active");
@@ -54,5 +54,53 @@ document.addEventListener("click", (e) => {
     }
 });
 
-// Update copyright year
+// this updates copyright year
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// Typewriter effect
+// class Typewriter {
+//   constructor(element, texts, speed = 50) {
+//     this.element = element;
+//     this.texts = texts;
+//     this.speed = speed;
+//     this.textIndex = 0;
+//     this.charIndex = 0;
+//     this.isDeleting = false;
+//     this.type();
+//   }
+
+//   type() {
+//     const currentText = this.texts[this.textIndex];
+    
+//     if (this.isDeleting) {
+//       this.element.textContent = currentText.substring(0, this.charIndex - 1);
+//       this.charIndex--;
+//     } else {
+//       this.element.textContent = currentText.substring(0, this.charIndex + 1);
+//       this.charIndex++;
+//     }
+
+//     let typeSpeed = this.speed;
+    
+//     if (this.isDeleting) {
+//       typeSpeed /= 2;
+//     }
+
+//     if (!this.isDeleting && this.charIndex === currentText.length) {
+//       typeSpeed = 2000; // Pause at end
+//       this.isDeleting = true;
+//     } else if (this.isDeleting && this.charIndex === 0) {
+//       this.isDeleting = false;
+//       this.textIndex = (this.textIndex + 1) % this.texts.length;
+//       typeSpeed = 500;
+//     }
+
+//     setTimeout(() => this.type(), typeSpeed);
+//   }
+// }
+
+// // Initialize
+// const typewriterElement = document.querySelector('.typewriter-text');
+// const texts = ['I\'m a web developer', 'I\'m an IT and Network technician'];
+// new Typewriter(typewriterElement, texts, 150);
+
